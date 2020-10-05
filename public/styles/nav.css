@@ -9,11 +9,11 @@ nav {
   justify-content: space-between;
 }
 
-span {
+span.title {
   margin: 1.5em;
   font-family: 'Bungee', cursive;
 }
 
-.right {
+.nav-text-right {
   margin: 1.5em;
 }
