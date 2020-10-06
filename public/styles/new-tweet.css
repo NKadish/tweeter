@@ -1,9 +1,9 @@
 .new-tweet {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 15px;
 }
 
 .text-form {
@@ -21,9 +21,14 @@
   font-family: 'Bungee', cursive;
 }
 
+.color-of-counter {
+  color: red;
+}
+
 .tweet-submit {
   background-color: #4056A1;
   color: #FFFFFF;
   border: 0;
   box-shadow: none;
 }
+

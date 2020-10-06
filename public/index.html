@@ -27,6 +27,13 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- Char Counter JS -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- Icon JS -->
+    <script src="https://kit.fontawesome.com/15bf9f9458.js"></script>
+
   </head>
 
   <body>
@@ -38,7 +45,7 @@
       </div>
     </nav>
 
-    <header>
+    <header class="profile">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -53,12 +60,34 @@
       <section class="new-tweet">
         <p>What are you humming about?</p>
         <form action="/tweets" method="POST">
-          <textarea class="text-form" name="text" id="tweet-text"></textarea>
+          <textarea class="text-form" name="text" id="tweet-text" value="Initial value"></textarea>
           <div class = 'postCounter'>
             <button class="tweet-submit" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section class="tweet-container">
+        <article>
+          <header class="tweet-header">
+            <div class="face-name">
+              <img class="img" src="https://i.imgur.com/73hZDYK.png">
+              Noah Kadish
+            </div>
+            <b class="handle">@nkadish</b>
+          </header>
+          <div class="tweet-text">
+            <b>Hello world</b>
+          </div>
+          <footer class="tweet-footer">
+            10 days ago
+            <div class="icons">
+              <i class="far fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
