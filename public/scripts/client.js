@@ -31,7 +31,7 @@ const createTweetElement = function(tweetObject) {
   tweet += `${escape(tweetObject.content.text)}`
   tweet += '</div>'
   tweet += '<footer class="tweet-footer">'
-  tweet += '10 days ago'
+  tweet += `${escape(new Date(tweetObject.created_at).toLocaleString())}`
   tweet += '<div class="icons">'
   tweet += '<i class="far fa-flag"></i>\n'
   tweet += '<i class="fas fa-retweet"></i>\n'
@@ -53,6 +53,7 @@ $(document).ready(function() {
       errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
       errorMsg += '<b> Please put text into the form! </b>'
       errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
+      $('.error').hide();
       $('.error').empty();
       $('.error').append(errorMsg);
       $('.error').slideDown('slow');
@@ -61,6 +62,7 @@ $(document).ready(function() {
       errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
       errorMsg += '<b> Please keep your text within 140 chars! </b>'
       errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
+      $('.error').hide();
       $('.error').empty();
       $('.error').append(errorMsg);
       $('.error').slideDown('slow');
