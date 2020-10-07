@@ -68,9 +68,10 @@ article:hover .handle {
  }
  
  .tweet-text {
-   margin-left: 5%;
+   margin-left: 3%;
    display: flex;
    justify-content: start;
+   flex-wrap: wrap;
  }
 
  .tweet-footer {
