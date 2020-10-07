@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const renderTweets = function(tweets) {
   for (const obj of tweets) {
     $('.tweet-container').prepend(createTweetElement(obj));
@@ -16,13 +22,13 @@ const createTweetElement = function(tweetObject) {
   tweet += '<article>'
   tweet += '<header class="tweet-header">'
   tweet += '<div class="face-name">'
-  tweet += `<img class="img" src="${tweetObject.user.avatars}">`
-  tweet += `${tweetObject.user.name}`
+  tweet += `<img class="img" src="${escape(tweetObject.user.avatars)}">`
+  tweet += `${escape(tweetObject.user.name)}`
   tweet += '</div>'
-  tweet += `<b class="handle">${tweetObject.user.handle}</b>`
+  tweet += `<b class="handle">${escape(tweetObject.user.handle)}</b>`
   tweet += '</header>'
   tweet += '<div class="tweet-text">'
-  tweet += `${tweetObject.content.text}`
+  tweet += `${escape(tweetObject.content.text)}`
   tweet += '</div>'
   tweet += '<footer class="tweet-footer">'
   tweet += '10 days ago'
