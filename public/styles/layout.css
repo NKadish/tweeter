@@ -86,3 +86,14 @@ article:hover .handle {
    opacity: 0;
  }
  
+ .error {
+   border: 2px solid red;
+   color: red;
+   width: 100%;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-direction: row;
+ }

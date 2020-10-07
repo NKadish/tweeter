@@ -43,15 +43,29 @@ const createTweetElement = function(tweetObject) {
 };
 
 $(document).ready(function() { 
+  $('.error').hide();
   $('form').submit(function(event) {
     event.preventDefault();
     let $formInput = $(this).serialize();
     let textForm = ($(this).children('.text-form'));
     if (textForm.val().length === 0) {
-      alert('YOU CAN\'T SEND AN EMPTY TWEET, SORRY');
+      let errorMsg = '';
+      errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
+      errorMsg += '<b> Please put text into the form! </b>'
+      errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
+      $('.error').empty();
+      $('.error').append(errorMsg);
+      $('.error').slideDown('slow');
     } else if (textForm.val().length > 140) {
-      alert('MAX CHARACTER INPUT IS 140, PLEASE SHORTEN YOUR TWEET');
+      let errorMsg = '';
+      errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
+      errorMsg += '<b> Please keep your text within 140 chars! </b>'
+      errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
+      $('.error').empty();
+      $('.error').append(errorMsg);
+      $('.error').slideDown('slow');
     } else {
+      $('.error').slideUp('slow')
       $.ajax({
         url: '/tweets',
         method: 'POST',
@@ -66,6 +80,7 @@ $(document).ready(function() {
           $('.tweet-container').prepend(createTweetElement(tweets[tweets.length - 1]));
         });
       });
+      textForm.val('');
     }
   })
   const loadTweets = function() {
