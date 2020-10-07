@@ -34,20 +34,20 @@ body {
   justify-content: space-between;
  }
 
-.tweet-container {
+article {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: stretch;
   border: 2px solid black;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
-.tweet-container:hover {
+article:hover {
   box-shadow: 10px 10px #4056A1;
 }
 
-.tweet-container:hover .handle {
+article:hover .handle {
   opacity: 0.75;
 }
 
@@ -84,3 +84,4 @@ body {
  .handle {
    opacity: 0;
  }
+ 
