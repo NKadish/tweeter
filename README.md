@@ -1,17 +1,24 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Welcome to Tweeter! It's a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+This project is AJAX based and allowed me to flex my HTML and CSS muscles. The website allows users to view tweets that have been posted, post new ones which show up without refreshing the page and is changes layouts depending on the device used. 
 
-## Getting Started
+## Final Product
 
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+!["The main page that shows you the URLs that you have created"](https://github.com/NKadish/tinyapp/blob/master/docs/urls-page.png?raw=true)
+!["The edit page that shows you the specific URL and allows you to edit it"](https://github.com/NKadish/tinyapp/blob/master/docs/url-edit.png?raw=true)
 
 ## Dependencies
 
+- Body-parser
+- Chance
 - Express
+- md5
 - Node 5.10.x or above
+
+
+## Getting Started
+
+- Install all dependencies (using the `npm install` command).
+- Run the development web server using the `npm run local` command.
