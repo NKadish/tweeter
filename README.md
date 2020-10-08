@@ -6,8 +6,9 @@ This project is AJAX based and allowed me to flex my HTML and CSS muscles. The w
 
 ## Final Product
 
-!["The main page that shows you the URLs that you have created"](https://github.com/NKadish/tinyapp/blob/master/docs/urls-page.png?raw=true)
-!["The edit page that shows you the specific URL and allows you to edit it"](https://github.com/NKadish/tinyapp/blob/master/docs/url-edit.png?raw=true)
+!["Layout of the tweets on a desktop"](https://github.com/NKadish/tweeter/blob/master/docs/Screen%20Shot%202020-10-08%20at%204.36.01%20PM.png?raw=true)
+!["Mobile layout shift"](https://github.com/NKadish/tweeter/blob/master/docs/Screen%20Shot%202020-10-08%20at%204.36.50%20PM.png?raw=true)
+!["Error message"](https://github.com/NKadish/tweeter/blob/master/docs/Screen%20Shot%202020-10-08%20at%204.37.11%20PM.png?raw=true)
 
 ## Dependencies
 
