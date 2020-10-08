@@ -97,3 +97,29 @@ article:hover .handle {
    justify-content: space-evenly;
    flex-direction: row;
  }
+
+ @media only screen and (min-width: 1024px) {
+  .profile {
+    width: 30vw;
+    height: 30vw;
+    float: left;
+    margin: 5%;
+    position: fixed;
+    top: 6%;
+  }
+
+  .profile-img {
+    height: 15vw;
+    width: 15vw;
+  }
+
+  .new-tweet {
+    margin-top: 170px;
+  }
+
+  .container {
+    width: 50%;
+    float: right;
+  }
+
+ }
