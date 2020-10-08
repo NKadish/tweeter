@@ -1,22 +1,19 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+// For securing our user inputs from cross-site scripting
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
+// Goes through the object of tweets and runs createTweetElement on each of them
+// Then it places them on our display newest first 
 const renderTweets = function(tweets) {
   for (const obj of tweets) {
     $('.tweet-container').prepend(createTweetElement(obj));
   }
-}
+};
 
-
+// Turns the tweet object into HTML for the tweet
 const createTweetElement = function(tweetObject) {
   let tweet = '';
   tweet += '<article>'
@@ -42,13 +39,19 @@ const createTweetElement = function(tweetObject) {
   return tweet;
 };
 
+// What we're doing once the document is ready
 $(document).ready(function() { 
+  // starts with hiding the error bad so that we don't see it on load
   $('.error').hide();
+  // this goes through what happens when the form is submitted
   $('form').submit(function(event) {
     event.preventDefault();
     let $formInput = $(this).serialize();
+    // fetches text-form so we can see what # of chars we're at
     let textForm = ($(this).children('.text-form'));
+
     if (textForm.val().length === 0) {
+      // if there is nothing in the submit form, give an error 
       let errorMsg = '';
       errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
       errorMsg += '<b> Please put text into the form! </b>'
@@ -58,6 +61,7 @@ $(document).ready(function() {
       $('.error').append(errorMsg);
       $('.error').slideDown('slow');
     } else if (textForm.val().length > 140) {
+      // else if there are too many characters, give an error
       let errorMsg = '';
       errorMsg += '<i class="fas fa-exclamation-triangle"></i>'
       errorMsg += '<b> Please keep your text within 140 chars! </b>'
@@ -66,7 +70,9 @@ $(document).ready(function() {
       $('.error').empty();
       $('.error').append(errorMsg);
       $('.error').slideDown('slow');
+
     } else {
+      // else if all is good, post the tweet and load it into the page
       $('.error').slideUp('slow')
       $.ajax({
         url: '/tweets',
@@ -75,20 +81,23 @@ $(document).ready(function() {
       })
       .then(() => {
         $.ajax({
-          url: "/tweets",
-          method: "GET"
+          url: '/tweets',
+          method: 'GET'
         })
         .then((tweets) => {
           $('.tweet-container').prepend(createTweetElement(tweets[tweets.length - 1]));
         });
       });
-      textForm.val('');
+      textForm.val(''); // once the tweet is submitted, the text in the text box empties
     }
-  })
+  });
+
+  // this gets the tweets from /tweets and then runs renderTweets on them
+  // we do this on document ready so that the tweets that already exist load on the page being ready
   const loadTweets = function() {
     $.ajax({
-      url: "/tweets",
-      method: "GET"
+      url: '/tweets',
+      method: 'GET'
     })
     .then((tweets) => {
       renderTweets(tweets);
