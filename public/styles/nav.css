@@ -9,6 +9,7 @@ nav {
   justify-content: space-between;
   position: fixed;
   top: 0;
+  opacity: 1;
 }
 
 span.title {
@@ -18,4 +19,8 @@ span.title {
 
 .nav-text-right {
   margin: 1.5em;
+  background-color: #4056A1;
+  border: none;
+  color: white;
+  outline: none;
 }

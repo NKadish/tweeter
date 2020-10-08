@@ -102,7 +102,16 @@ $(document).ready(function() {
     .then((tweets) => {
       renderTweets(tweets);
     });
-  }
+  };
   loadTweets();
 });
 
+// functionality for the write a new tweet button
+// when clicked it scrolls the write a new tweet to the top of the page and focuses on it
+$(document).ready(function() {
+  $('.nav-text-right').click(function() {
+    $('.text-form')[0].scrollIntoView(true);
+    window.scrollBy(0, -180);
+    $('.text-form').focus();
+  })
+});

@@ -10,10 +10,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -22,17 +18,21 @@ body {
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+* What holds the tweets and the form
+*/
 
- .container {
+.container {
   background-color: #f4f1ec;
   margin-right: 5%;
   margin-left: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
- }
+}
+
+/*
+* box around the tweets and what to do with the content inside 
+*/
 
 article {
   display: flex;
@@ -43,6 +43,10 @@ article {
   margin-bottom: 50px;
 }
 
+/*
+* Functionality for hovering over tweets 
+*/
+
 article:hover {
   box-shadow: 10px 10px #4056A1;
 }
@@ -50,6 +54,14 @@ article:hover {
 article:hover .handle {
   opacity: 0.75;
 }
+
+article:hover .icons {
+  opacity: 0.75;
+}
+
+/*
+* The box that holds the tweets 
+*/
 
 .tweet-header {
   display: flex;
@@ -82,10 +94,18 @@ article:hover .handle {
    justify-content: space-between;
  }
 
+ .icons {
+   opacity: 0;
+ }
+
  .handle {
    opacity: 0;
  }
  
+/*
+* Error message
+*/
+
  .error {
    border: 2px solid red;
    color: red;
@@ -98,6 +118,9 @@ article:hover .handle {
    flex-direction: row;
  }
 
+/*
+* Dynamic view for desktop
+*/
  @media only screen and (min-width: 1024px) {
   .profile {
     width: 30vw;
