@@ -10,7 +10,6 @@ $(document).ready(function() {
     } else {
       counter.removeClass('color-of-counter');
     }
-    counterValUpdate;
   });
 });
 

@@ -49,7 +49,6 @@ $(document).ready(function() {
     let $formInput = $(this).serialize();
     // fetches text-form so we can see what # of chars we're at
     let textForm = ($(this).children('.text-form'));
-
     if (textForm.val().length === 0) {
       // if there is nothing in the submit form, give an error 
       let errorMsg = '';
@@ -89,6 +88,7 @@ $(document).ready(function() {
         });
       });
       textForm.val(''); // once the tweet is submitted, the text in the text box empties
+      $('.counter').val(140);
     }
   });
 

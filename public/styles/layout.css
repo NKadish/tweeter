@@ -81,9 +81,11 @@ article:hover .icons {
  
  .tweet-text {
    margin-left: 3%;
+   margin-right: 3%;
    display: flex;
    justify-content: start;
    flex-wrap: wrap;
+   word-break: break-word;
  }
 
  .tweet-footer {
